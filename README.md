@@ -14,6 +14,6 @@
 
 ---
 
-\* _click on the image to download the layout \*.psd format_ 
+\* _click on the image to download the layout in .psd format_ 
 
 [![Figma layout](img/MD_image.jpg)](https://github.com/Chferchko/Retro_bicycle/raw/master/img/YEBO_Bicycle_Theme.psd)
