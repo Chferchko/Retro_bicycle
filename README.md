@@ -16,4 +16,4 @@
 
 \* _click on the image to download the layout_ 
 
-[![Figma layout](img/MD_image.jpg)](https://chferchko.github.io/Retro_bicycle/img/YEBO_Bicycle_Theme.psd)
+[![Figma layout](img/MD_image.jpg)](https://github.com/Chferchko/Retro_bicycle/raw/master/img/YEBO_Bicycle_Theme.psd)
