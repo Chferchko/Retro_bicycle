@@ -154,7 +154,7 @@ body {
   position: fixed;
   bottom: 15px;
   right: 15px;
-  z-index: 99;
+  z-index: 9;
   width: 40px;
   height: 40px;
   border: 1px solid #4d4959;
@@ -393,12 +393,16 @@ body {
 }
 @media (max-width: 1600px) {
   .about-us__info {
-    padding-top: calc(40px + 77 * ((100vw - 320px) / 1280)) !important;
+    padding-top: calc(
+				40px + 77 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 @media (max-width: 1600px) {
   .about-us__info {
-    padding-bottom: calc(40px + 102 * ((100vw - 320px) / 1280)) !important;
+    padding-bottom: calc(
+				40px + 102 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 
@@ -460,12 +464,16 @@ body {
 }
 @media (max-width: 1600px) {
   .social {
-    padding-top: calc(40px + 84 * ((100vw - 320px) / 1280)) !important;
+    padding-top: calc(
+				40px + 84 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 @media (max-width: 1600px) {
   .social {
-    padding-bottom: calc(40px + 84 * ((100vw - 320px) / 1280)) !important;
+    padding-bottom: calc(
+				40px + 84 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 .social__container {
@@ -504,7 +512,9 @@ body {
 }
 @media (max-width: 1600px) {
   .social__slider {
-    padding-bottom: calc(40px + 64 * ((100vw - 320px) / 1280)) !important;
+    padding-bottom: calc(
+				40px + 64 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 
@@ -537,12 +547,16 @@ body {
 }
 @media (max-width: 1600px) {
   .shop__button-wrapper {
-    padding-top: calc(40px + 35 * ((100vw - 320px) / 1280)) !important;
+    padding-top: calc(
+				40px + 35 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 @media (max-width: 1600px) {
   .shop__button-wrapper {
-    padding-bottom: calc(40px + 35 * ((100vw - 320px) / 1280)) !important;
+    padding-bottom: calc(
+				40px + 35 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 .shop__button {
@@ -577,12 +591,16 @@ body {
 }
 @media (max-width: 1600px) {
   .mail {
-    padding-top: calc(40px + 70 * ((100vw - 320px) / 1280)) !important;
+    padding-top: calc(
+				40px + 70 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 @media (max-width: 1600px) {
   .mail {
-    padding-bottom: calc(40px + 70 * ((100vw - 320px) / 1280)) !important;
+    padding-bottom: calc(
+				40px + 70 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 .mail__container {
@@ -664,12 +682,16 @@ body {
 }
 @media (max-width: 1600px) {
   .footer {
-    padding-top: calc(20px + 88 * ((100vw - 320px) / 1280)) !important;
+    padding-top: calc(
+				20px + 88 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 @media (max-width: 1600px) {
   .footer {
-    padding-bottom: calc(20px + 88 * ((100vw - 320px) / 1280)) !important;
+    padding-bottom: calc(
+				20px + 88 * ((100vw - 320px) / 1280)
+			) !important;
   }
 }
 .footer__container {
