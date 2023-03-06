@@ -2,11 +2,15 @@
 
 @import "nullstyle.scss";
 
-/* ================================== Подключение шрифтов ================================== */ 
+/* ================================== Подключение шрифтов ================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
 
 /* ================================== Технические стили ================================== */
+
+* {
+	-webkit-tap-highlight-color: transparent;
+}
 
 html {
 }
@@ -57,17 +61,22 @@ $maxWidth: 1600;
 $maxWidthContainer: 1600;
 @mixin adapt-value($property, $startSize, $minSize, $type) {
 	$addSize: $startSize - $minSize;
-	@if $type==1 { //Только если меньше контейнера
+	@if $type==1 {
+		//Только если меньше контейнера
 		#{$property}: $startSize + px !important;
 		@media (max-width: #{$maxWidthContainer + px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320})) !important;
+			#{$property}: calc(
+				#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320})
+			) !important;
 		}
-	} @else if $type==2 { //Только если больше контейнера
+	} @else if $type==2 {
+		//Только если больше контейнера
 		#{$property}: $startSize + px;
 		@media (min-width: #{$maxWidthContainer + px}) {
 			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})) !important;
 		}
-	} @else { //Всегда
+	} @else {
+		//Всегда
 		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})) !important;
 	}
 }
@@ -91,19 +100,19 @@ $maxWidthContainer: 1600;
 %watermark {
 	z-index: 1;
 	.watermark {
-		transition: opacity .3s;
+		transition: opacity 0.3s;
 		opacity: 0;
 		z-index: 2;
 	}
 	&::before {
 		position: absolute;
-		content:'';
+		content: "";
 		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
 		z-index: 3;
-		transition: opacity .3s;
+		transition: opacity 0.3s;
 		opacity: 0;
 	}
 	&:hover::before {
@@ -126,12 +135,13 @@ $maxWidthContainer: 1600;
 .info {
 	text-align: center;
 	position: relative;
-	&>*{
+	& > * {
 		&:not(:last-child) {
 			margin: 0px 0px 35px 0px;
 		}
 	}
-	&__icon {}
+	&__icon {
+	}
 	&__title {
 		font-size: 18px;
 		line-height: 1.2;
@@ -147,14 +157,14 @@ $maxWidthContainer: 1600;
 		&_justify {
 			text-align: justify;
 			position: relative;
-			&::after{
+			&::after {
 				position: absolute;
 				bottom: -40px;
 				left: 50%;
-				content:'';
+				content: "";
 				width: 50px;
 				height: 1px;
-				background-color: rgba(53,55,56,0.2);
+				background-color: rgba(53, 55, 56, 0.2);
 				transform: translateX(-50%);
 			}
 		}
@@ -188,25 +198,25 @@ $maxWidthContainer: 1600;
 		flex: 0 0 auto;
 		padding: 0 32.5px;
 		position: relative;
-		&::after{
-			content:'.';
+		&::after {
+			content: ".";
 			position: absolute;
 			bottom: 6px;
 			right: 0;
 		}
-		&:nth-child(2){
+		&:nth-child(2) {
 			padding: 0px 105px 0px 32.5px;
-			&::after{
-				content:'';
+			&::after {
+				content: "";
 				display: none;
 			}
 		}
-		&:nth-child(3){
+		&:nth-child(3) {
 			padding: 0px 32.5px 0px 105px;
 		}
-		&:nth-child(4){
-			&::after{
-				content:'';
+		&:nth-child(4) {
+			&::after {
+				content: "";
 				display: none;
 			}
 		}
@@ -220,8 +230,8 @@ $maxWidthContainer: 1600;
 			text-transform: uppercase;
 			letter-spacing: 0.2em;
 			color: #4d4959;
-			transition: transform .3s;
-			&:hover{
+			transition: transform 0.3s;
+			&:hover {
 				transform: scale(1.3);
 			}
 		}
@@ -244,7 +254,7 @@ $maxWidthContainer: 1600;
 
 .intro {
 	height: 100vh;
-	background: url('../img/intro/intro_bg.jpg') center / cover no-repeat fixed;
+	background: url("../img/intro/intro_bg.jpg") center / cover no-repeat fixed;
 }
 
 .about-us {
@@ -260,7 +270,8 @@ $maxWidthContainer: 1600;
 }
 
 .work {
-	&__container {}
+	&__container {
+	}
 	&__body {
 		display: grid;
 		grid-template: repeat(9, minmax(200px, 1fr)) / repeat(3, 1fr);
@@ -285,25 +296,25 @@ $maxWidthContainer: 1600;
 		&:nth-child(1) {
 			@extend %watermark;
 			&::before {
-				background: url('../img/content_imgs/icons/water_1.png') center no-repeat;
+				background: url("../img/content_imgs/icons/water_1.png") center no-repeat;
 			}
 		}
 		&:nth-child(5) {
 			@extend %watermark;
 			&::before {
-				background: url('../img/content_imgs/icons/water_2.png') center no-repeat;
+				background: url("../img/content_imgs/icons/water_2.png") center no-repeat;
 			}
 		}
 		&:nth-child(7) {
 			@extend %watermark;
 			&::before {
-				background: url('../img/content_imgs/icons/water_3.png') center no-repeat;
+				background: url("../img/content_imgs/icons/water_3.png") center no-repeat;
 			}
 		}
 		&:nth-child(9) {
 			@extend %watermark;
 			&::before {
-				background: url('../img/content_imgs/icons/water_3.png') center no-repeat;
+				background: url("../img/content_imgs/icons/water_3.png") center no-repeat;
 			}
 		}
 	}
@@ -313,8 +324,8 @@ $maxWidthContainer: 1600;
 		grid-column-start: span 1;
 		background-color: white;
 		padding: 70px 68px 95px;
-		&::after{
-			content:'';
+		&::after {
+			content: "";
 			position: absolute;
 			bottom: -10px;
 			left: 50%;
@@ -338,7 +349,8 @@ $maxWidthContainer: 1600;
 	&__body {
 		text-align: center;
 	}
-	&__item {}
+	&__item {
+	}
 	&__item-icon {
 		margin: 0px 0px 37px 0px;
 	}
@@ -370,7 +382,8 @@ $maxWidthContainer: 1600;
 }
 
 .shop {
-	&__container {}
+	&__container {
+	}
 	&__body {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -380,12 +393,12 @@ $maxWidthContainer: 1600;
 		&_square {
 			grid-row-start: span 1;
 			grid-column-start: span 1;
-			padding: 0px 0px calc(267 / 267 * 100%) 0px;			
+			padding: 0px 0px calc(267 / 267 * 100%) 0px;
 		}
 		&_vertical {
 			grid-row-start: span 2;
 			grid-column-start: span 1;
-			padding: 0px 0px calc(534 / 267 * 100%) 0px;			
+			padding: 0px 0px calc(534 / 267 * 100%) 0px;
 		}
 		&_horizont {
 			grid-row-start: span 1;
@@ -393,8 +406,8 @@ $maxWidthContainer: 1600;
 			padding: 0px 0px calc(267 / 534 * 100%) 0px;
 			@extend %watermark;
 			&::before {
-				background: url('../img/content_imgs/icons/water_4.png') center no-repeat;
-			}	
+				background: url("../img/content_imgs/icons/water_4.png") center no-repeat;
+			}
 		}
 	}
 	&__button-wrapper {
@@ -418,8 +431,8 @@ $maxWidthContainer: 1600;
 			text-transform: uppercase;
 			letter-spacing: 0.2em;
 			color: #ffffff;
-			border: 1px solid rgba(255,255,255,0.49);
-			transition: background-color .3s;
+			border: 1px solid rgba(255, 255, 255, 0.49);
+			transition: background-color 0.3s;
 			&:hover {
 				background-color: #4d4959;
 			}
@@ -461,11 +474,26 @@ $maxWidthContainer: 1600;
 		font-style: italic;
 		color: #929292;
 		padding: 25px 28px;
-		&::placeholder 				  {color:#000; opacity: 0.3;}
-		&::-webkit-input-placeholder {color:#000; opacity: 0.3;}/* webkit */
-		&::-moz-placeholder          {color:#000; opacity: 0.3;}/* Firefox 19+ */
-		&:-moz-placeholder           {color:#000; opacity: 0.3;}/* Firefox 18- */
-		&:-ms-input-placeholder      {color:#000; opacity: 0.3;}/* IE */
+		&::placeholder {
+			color: #000;
+			opacity: 0.3;
+		}
+		&::-webkit-input-placeholder {
+			color: #000;
+			opacity: 0.3;
+		} /* webkit */
+		&::-moz-placeholder {
+			color: #000;
+			opacity: 0.3;
+		} /* Firefox 19+ */
+		&:-moz-placeholder {
+			color: #000;
+			opacity: 0.3;
+		} /* Firefox 18- */
+		&:-ms-input-placeholder {
+			color: #000;
+			opacity: 0.3;
+		} /* IE */
 	}
 	&__form-btn {
 		padding: 26px 45px;
@@ -475,9 +503,9 @@ $maxWidthContainer: 1600;
 		line-height: 24px;
 		font-weight: 300;
 		color: #ffffff;
-		transition: background-color .3s;
-		&:hover{
-			background-color: #5baf8f;			
+		transition: background-color 0.3s;
+		&:hover {
+			background-color: #5baf8f;
 		}
 	}
 }
@@ -506,23 +534,22 @@ $maxWidthContainer: 1600;
 			color: #848789;
 			font-style: italic;
 		}
-		p:nth-child(1){
+		p:nth-child(1) {
 			color: #5a5d5e;
 		}
 		a {
 			display: inline-block;
 			color: inherit;
 			position: relative;
-			&::after{
+			&::after {
 				position: absolute;
-				content:'';
+				content: "";
 				height: 1px;
 				background-color: #848789;
 				bottom: -2px;
 				left: 50%;
 				right: 50%;
-				transition: left .3s,
-								right .3s;
+				transition: left 0.3s, right 0.3s;
 			}
 			&:hover::after {
 				left: 0;
@@ -537,8 +564,8 @@ $maxWidthContainer: 1600;
 		justify-content: center;
 	}
 	&__social-logo {
-		transition: transform .3s;
-		&:hover{
+		transition: transform 0.3s;
+		&:hover {
 			transform: scale(1.3);
 		}
 	}
@@ -555,12 +582,13 @@ $maxWidthContainer: 1600;
 		color: #848789;
 		font-weight: 700;
 	}
-	&__maker-logo {}
+	&__maker-logo {
+	}
 }
 
 /* ================================== Media =================================== */
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
 	.work {
 		&__info {
 			padding: 40px 15px;
@@ -569,66 +597,68 @@ $maxWidthContainer: 1600;
 	.info {
 		&__text {
 			&_justify {
-				&::after{
+				&::after {
 					bottom: -15px;
 				}
 			}
 		}
 	}
 	.shop {
-		&__image{
+		&__image {
 			img {
 				object-fit: contain;
 			}
 		}
 	}
 }
-@media (min-width: 1201px){
+@media (min-width: 1201px) {
 	.shop {
 		&__body {
 			grid-template: repeat(2, minmax(267px, auto)) / repeat(6, 1fr);
 		}
-	}	  
+	}
 }
-@media (max-width: 992px){
+@media (max-width: 992px) {
 	.work {
 		&__body {
-			grid-template: 1fr / minmax(320px, auto);				
+			grid-template: 1fr / minmax(320px, auto);
 		}
 		&__image {
-			&_big, &_middle, &_small {
+			&_big,
+			&_middle,
+			&_small {
 				grid-column-start: span 1;
 			}
 		}
 		div {
-			&:nth-child(1){
+			&:nth-child(1) {
 				order: 1;
 			}
-			&:nth-child(2){
+			&:nth-child(2) {
 				order: 3;
 			}
-			&:nth-child(3){
+			&:nth-child(3) {
 				order: 2;
 			}
-			&:nth-child(4){
+			&:nth-child(4) {
 				order: 6;
 			}
-			&:nth-child(5){
+			&:nth-child(5) {
 				order: 4;
 			}
-			&:nth-child(6){
+			&:nth-child(6) {
 				order: 5;
 			}
-			&:nth-child(7){
+			&:nth-child(7) {
 				order: 7;
 			}
-			&:nth-child(8){
+			&:nth-child(8) {
 				order: 8;
 			}
-			&:nth-child(9){
+			&:nth-child(9) {
 				order: 9;
 			}
-			&:nth-child(10){
+			&:nth-child(10) {
 				order: 10;
 			}
 		}
@@ -649,11 +679,11 @@ $maxWidthContainer: 1600;
 			width: 100%;
 			height: 100%;
 			padding: 155px 0px 0px 0px;
-			transition: top .5s;
+			transition: top 0.5s;
 			overflow: scroll;
 			z-index: 10;
-			&::before{
-				content:'';
+			&::before {
+				content: "";
 				display: block;
 				position: absolute;
 				top: 35px;
@@ -661,7 +691,7 @@ $maxWidthContainer: 1600;
 				transform: translateX(-50%);
 				width: 94px;
 				height: 85px;
-				background: url('../img/header/header_logo.png') center / cover no-repeat;
+				background: url("../img/header/header_logo.png") center / cover no-repeat;
 			}
 		}
 		&__menu-list.active {
@@ -669,7 +699,7 @@ $maxWidthContainer: 1600;
 		}
 		&__menu-item {
 			a {
-				font-size: 20px;		
+				font-size: 20px;
 			}
 		}
 		&__menu-burger {
@@ -693,7 +723,7 @@ $maxWidthContainer: 1600;
 				width: 25px;
 				height: 1px;
 				background-color: #4d4959;
-				transition: transform .5s;
+				transition: transform 0.5s;
 			}
 		}
 		&__menu-burger.active {
@@ -704,13 +734,13 @@ $maxWidthContainer: 1600;
 			span {
 				background-color: white;
 				margin: 0;
-				&:nth-child(1){
+				&:nth-child(1) {
 					transform: rotate(45deg) translateX(0.5px);
 				}
-				&:nth-child(2){
+				&:nth-child(2) {
 					display: none;
 				}
-				&:nth-child(3){
+				&:nth-child(3) {
 					transform: rotate(-45deg) translateX(0.5px);
 				}
 			}
@@ -720,11 +750,12 @@ $maxWidthContainer: 1600;
 				color: white;
 			}
 			padding: 20px 0;
-			&:nth-child(2), &:nth-child(3) {
+			&:nth-child(2),
+			&:nth-child(3) {
 				padding: 20px 0;
 			}
-			&:not(:last-child)::after{
-				content: '.';
+			&:not(:last-child)::after {
+				content: ".";
 				display: block;
 				bottom: -3px;
 				right: 50%;
@@ -739,7 +770,7 @@ $maxWidthContainer: 1600;
 		}
 	}
 }
-@media (max-width: 576px){
+@media (max-width: 576px) {
 	.mail {
 		&__form-text {
 			flex: 1 1 400px;
